@@ -97,6 +97,7 @@ margin-bottom: 6px;"
             v-model="input.password"
             id="password"
             name="password"
+            type="password"
             required class="inputs"
             placeholder="Şifre"/>
         </div>

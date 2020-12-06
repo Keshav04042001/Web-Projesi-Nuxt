@@ -5,11 +5,16 @@
         <br>
         <br>
         <br>
-        <Urun />
-        <Urun />
-        <Urun />
-        <BB />
+        
+        <Urun /><Urun /><Urun /><Urun /><Urun /><Urun /><Urun />
         
         
     </div>
 </template>
+
+<script>
+
+export default {
+    
+}
+</script>

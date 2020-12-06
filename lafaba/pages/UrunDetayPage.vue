@@ -1,3 +1,7 @@
 <template>
-    <ProductDetail />
+  <div>
+       <ProductDetail />
+    <BB />
+  </div>
+   
 </template>

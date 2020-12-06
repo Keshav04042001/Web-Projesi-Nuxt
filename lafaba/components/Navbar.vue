@@ -1,8 +1,11 @@
 <template>
   <nav>
-    <Dropdown title="YENİ GELENLER" :items="yenigelenler" />
-    <Dropdown title="KADIN" :items="kadin" />
-    <Dropdown title="ERKEK" :items="erkek" />
+    <Dropdown  id="d1" title="YENİ GELENLER" :items="yenigelenler"  >
+      <div><img src="https://www.lafaba.com/skins/shared/images/content/yeni-gelenler-desktop-menu-fw20.jpg"></div>
+      
+    </Dropdown>
+    <Dropdown id="d1" title="KADIN" :items="kadin" />
+    <Dropdown id="d1" title="ERKEK" :items="erkek" />
   </nav>
 </template>
 
@@ -20,11 +23,13 @@ export default {
         {
           title: 'KADIN YENİ GELENLER',
           link: '#'
+          
         },
         {
           title: 'ERKEK YENİ GELENLER',
           link:'#'
         }
+        
       ],
       kadin: [
         {
@@ -84,17 +89,19 @@ export default {
 </script>
 
 <style>
+
 nav {
   background-color: #333333;;
   display: flex;
   align-items: center;
   justify-content: left; 
   left: 100px;
+}
+#d1{
   color: white;
 }
-
 nav .menu-item {
-  color: white;
+  color: black;
   padding: 10px 20px;
   position: relative;
   text-align: center;

@@ -47,7 +47,7 @@
             <small>Toplam:</small>
             <span>114,99 TL</span>    
         </div>
-        <a class="btn btn-sm btn-danger" href="/store/shoppingcart.aspx">
+        <a class="btn btn-sm btn-danger" href="/minSepPage">
             <i class="fa fa-shopping-cart">&nbsp;</i>
             <span>Sepete Git</span>
         </a>

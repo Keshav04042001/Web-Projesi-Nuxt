@@ -229,11 +229,6 @@
         
             <div id="div40"  class="vprp-title">Beden: <span id="vprp-a"></span></div>
             <div id="div41" class="product-variants vprp-a">
-               <select v-model="selected">
-                  <option v-for="option in options" :value="option.number" :key="option.number">
-                        {{ option.text }}
-                  </option>
-               </select
                 
                 <a id="a5" data-value="36" data-event="a" data-hdn="vprp-a" class="vprp-enabled" data-stock="1" title="">36</a>
                 
@@ -342,26 +337,6 @@
 </div>
   </div>
 </template>
-
-<script>
-export default {
-   selected:1,
-      options: [
-        { number: 1, text: "Öğütme Boyutu" },
-        { number: 2, text: "French Press" },
-        { number: 3, text: "Chemex" },
-        { number: 4, text: "Metal Filtre" },
-        { number: 5, text: "Kağıt Filtre" },
-        { number: 6, text: "Hario V60" },
-        { number: 7, text: "Aeropress" },
-        { number: 8, text: "Moka Pot" },
-        { number: 9, text: "Espresso" },
-        { number: 10, text: "Soğuk Demleme" },
-        { number: 11, text: "Çekirdek" },
-        { number: 12, text: "Syphon" },
-      ],
-}
-</script>
 
 <style scoped>
 #div1{

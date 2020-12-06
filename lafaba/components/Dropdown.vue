@@ -28,18 +28,23 @@ export default {
 }
 </script>
 
-<style>
-
+<style >
+nav .menu-item{
+  color: black;
+}
 
 nav .menu-item .sub-menu {
   position: absolute;
-  background-color: black;
+  background-color:white;
   height: 300px;
   width: 1000px;
   top: calc(100% + 18px);
   left: 100%;
   font-size: 15px;
   transform: translateX(-20%);
+  color: black;
+}
+.menu-item{
   color: black;
 }
 

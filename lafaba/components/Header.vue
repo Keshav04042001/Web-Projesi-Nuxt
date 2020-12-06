@@ -5,7 +5,7 @@
             <div class="container p0">
                 <!--Logo div-->
                 <div class="col-xs-6 header-center p0">
-                    <a class="navbar-brand a1" href="/anasayfa">
+                    <a id="aa" class="navbar-brand a1" href="/anasayfa">
                         <img  id="i1"  height="30" width="160" src="../assets/logo.png" alt="LOGO">
                     </a>
 
@@ -28,8 +28,8 @@
                             <i class="fa fa-user" id="usericon"></i>
                         </a>
                     </div>
-                    <div href="/sepetim">
-                     <a href="/sepetim">
+                    <div href="/minSepPage">
+                     <a href="/minSepPage">
                         <i class="fa fa-shopping-cart" id="carticon"></i></a>
                    
                     </div>
@@ -47,6 +47,11 @@ export default { }
 </script>
 
 <style scoped>
+#aa{
+    position: relative;
+    top: 45px;
+    left: 10px;
+}
 #icondiv{
     width: 300;
     height:10;
@@ -74,34 +79,34 @@ export default { }
  font-size: 14px;
  text-emphasis: size 10px;
  position: relative;
- top:-25px;
- left:300px;
+ top:15px;
+ left:350px;
 }
 #searchicon{
     
  position: relative;
- top:-25px;
- left:250px;
+ top:15px;
+ left:320px;
  color:black;
 }
 #hearticon{
      position: relative;
- top:-50px;
- left:1000px;
+ top:-10px;
+ left:1110px;
  color:white;
  font-size: 20px;
 }
 #usericon{
      position: relative;
- top:-70px;
- left:1100px;
+ top:-32px;
+ left:1150px;
  color:white;
  font-size: 20px;
 }
 #carticon{
     position: relative;
- top:-90px;
- left:1200px;
+ top:-54px;
+ left:1190px;
  color:white;
  font-size: 20px;
 }
