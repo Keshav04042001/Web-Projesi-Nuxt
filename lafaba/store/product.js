@@ -1,35 +1,38 @@
-import Vuex from "vuex";
+const data = require("@/data/products.json");
 
-const createStore = () => {
-    return new Vuex.Store({
-        state : {
-            fetchedProducts : []
-        },
-        mutations : {
-            setProducts(state, products){
-                state.fetchedProducts = products
-            }
-        },
-        actions : {
-            nuxtServerInit(vuexContext, context){
-              vuexContext.commit("setProducts", [
-                  {
-                        id: "1",
-                        title: "",
-                        price: 199.99,
-                  },
-              ])
-            },
-            setProducts(vuexContext, products){
-                vuexContext.commit("setProducts", products)
-            }
-        },
-        getters : {
-            getPosts(state){
-                return state.fetchedProducts
+export const state = () => ({
+    isInitialized: false,
+    products: [],
+    product: null
+});
+export const mutations = {
+    setProducts(state, param) {
+        state.products = param;
+    },
+    setProduct(state, product) {
+        state.product = product;
+    }
+};
+export const actions = {
+    initData({ state, commit }, ) {
+        if (state.isInitialized === false) {
+            commit("setProducts", data);
+            state.isInitialized = true;
+        }
+    },
+    setProduct({ state, commit }, id) {
+        for (let i = 0; i < state.products.length; i++) {
+            if (state.products[i].id === id) {
+                commit("setProduct", state.products[i]);
             }
         }
-    })
-}
-
-export default createStore
+    }
+};
+export const getters = {
+    getProducts(state) {
+        return state.products;
+    },
+    getProduct(state) {
+        return state.product;
+    }
+};

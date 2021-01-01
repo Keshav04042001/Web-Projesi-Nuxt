@@ -1,11 +1,11 @@
 <template>
   <div>
-    <Header />
+    <Menu />
     <Nuxt />
+    <Footer />
   </div>
 </template>
 <script>
-import Header from "@/components/Header"
 export default {
   
 }
