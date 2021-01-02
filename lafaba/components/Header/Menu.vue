@@ -30,7 +30,10 @@
                                         <a href="/store/usershoppinglist.aspx"><i class="fa fa-heart"></i></a>
                                     </li>
                                     <li>
-                                        <a href="/login.aspx"><i class="fa fa-user"></i></a>
+                                        <Nuxt-link to="/login.aspx">
+                                            <i class="fa fa-user"></i>
+                                        </Nuxt-link>
+                                        
                                     </li>                                    
                                 </ul>
                             </div>
@@ -62,9 +65,9 @@
                                 <li class="visible-xs">
                                     <a class="toggle-search collapse" data-toggle="collapse" data-target="#search-new-mobile" href="javascript:;" aria-expanded="true"><i class="fa fa-search"></i></a></li>
                                     <li class="dropdown dropdown-hover hasUserMenu">
-                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                                            <i class="fa fa-user"></i><b class="caret"></b>
-                                        </a>
+                                        <Nuxt-link to="/login.aspx">
+                                            <i class="fa fa-user"></i>
+                                        </Nuxt-link>
                                         <Account />
                                     </li>
                                     <li><a href="/store/usershoppinglist.aspx"><i class="fa fa-heart"></i></a>
