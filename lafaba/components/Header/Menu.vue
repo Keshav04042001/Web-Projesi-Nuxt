@@ -1,7 +1,7 @@
 <template>
     <body class="pace-running pace-done pace-done">
         <div class="navbar navbar-km megamenu headerv5" role="navigation"> 
-            <HeaderTop />
+            <TopBar />
             <div class="header-container">
                 <div class="navbar-top visible-xs">
                     <div class="container">
@@ -56,7 +56,7 @@
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                         <div class="cart-quantity-icon">
                                             <i class="fa fa-shopping-cart"></i>
-                                            <span class="cart-response">(0)</span> 
+                                            <span class="cart-response"> ({{ basket.length }}) </span> 
                                         </div>
                                     </a>
                                 </div>
@@ -68,7 +68,7 @@
                                         <Nuxt-link to="/login.aspx">
                                             <i class="fa fa-user"></i>
                                         </Nuxt-link>
-                                        <Account />
+                                        <HeaderBasket />
                                     </li>
                                     <li><a href="/store/usershoppinglist.aspx"><i class="fa fa-heart"></i></a>
                                 </li>
@@ -107,6 +107,11 @@ export default {
         Account,
         Navbar,
         SearcBox
-    ]
+    ],
+    computed: {
+    basket() {
+      return this.$store.getters["basket/getBasketItems"];
+    }
+  },
 }
 </script>

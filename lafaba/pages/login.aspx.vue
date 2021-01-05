@@ -1,6 +1,6 @@
 <template>
 <div class="main">
-    <SignIn />
+    <SignIn v-if="isLogin === true" />
 </div>
 </template>
 
@@ -9,3 +9,13 @@
     background-image: url(https://www.lafaba.com/skins/default/images/login-container-bg.jpg);
 }
 </style>
+
+<script>
+export default {
+  data: function () {
+    return {
+      isLogin: true,
+    };
+  },
+}
+</script>

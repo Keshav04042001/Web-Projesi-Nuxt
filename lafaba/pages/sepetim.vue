@@ -170,7 +170,7 @@
                         <tr>
                             <td colspan="2">
                                 
-                                <a id="btn-complate-order" class="btn btn-success btn-lg btn-block btn-next-step">
+                                <a href="checkoutp1.aspx" id="btn-complate-order" class="btn btn-success btn-lg btn-block btn-next-step">
                                     <i class="fa fa-check-square-o"></i>&nbsp;Sepeti Onayla&nbsp;<i class="fa fa-arrow"></i>
                                 </a>
                             </td>

@@ -36,9 +36,9 @@
                                     maxlength="100" 
                                     id="ctl00_PortalContent_TxtEmail" 
                                     class="form-control km-required" 
+                                    data-error="Zorunlu alan!"
                                     aria-required="true"
                                     type="text" 
-                                    placeholder="login" 
                                     v-model="email"
                                 >
                             </div>
@@ -49,7 +49,7 @@
                                     id="ctl00_PortalContent_TxtPassword" 
                                     class="form-control km-required" 
                                     type="password" 
-                                    placeholder="password" 
+                                    data-error="Zorunlu alan!"
                                     v-model="password"
                                 >
                             </div>
@@ -157,7 +157,7 @@ export default {
         .signInWithEmailAndPassword(this.email, this.password)
         .then(data => {
           console.log(data)
-          this.$router.push('/')
+          this.$router.push('/account')
         })
         .catch(error => {
           this.error = error

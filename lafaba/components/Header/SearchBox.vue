@@ -2,7 +2,16 @@
     <div class="col-xs-12 search-new p0">
         <div class="col-xs-12 search-new p0">
             <div class="search-input-box input-group">
-                <input type="search" name="q" placeholder="Aramak istediğinizi ürünü yazınız" class="search-input form-control">
+                <input 
+                  name="q" 
+                  placeholder="Aramak istediğinizi ürünü yazınız" 
+                  class="search-input form-control"
+                  type="text"
+                  v-model.trim="input"
+                  v-on:input="search()"
+                  ref="input"
+                  @blur="closeSearchBar()"
+                >
                 <span class="input-group-btn">
                     <button class="btn-nobg search-btn" type="submit"><i class="fa fa-search"></i></button>
                 </span>
@@ -43,19 +52,21 @@ input {
 }
 </style>
 
+
 <script>
 export default {
-    function(e) {
-  if (e.which == 13) {
-    var searchString = $('.search-new .search-input').val();
-    if (searchString == null || searchString.trim() === '') {
-      $(".search-new .search-input-box").css('background', '#f7d6d6');
-      $(".search-new .search-input").val('').attr('placeholder', 'Geçerli bir kelime giriniz');
-      e.preventDefault();
-    } else {
-      searchProduct($(this).val());
+  // name: " listSearch",
+  data: () => ({
+    input: ""
+  }),
+  methods: {
+    search() {
+      this.$store.dispatch("UPDATE_CURATED_LIST", this.input);
+      this.$store.commit("SET_LIST_SEARCH", this.input);
+    },
+    closeSearchBar() {
+      this.$store.commit("SET_DISPLAY_SEARCH_LIST", false);
     }
   }
-}
-}
+};
 </script>

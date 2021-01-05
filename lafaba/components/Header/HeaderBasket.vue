@@ -5,26 +5,30 @@
         <table>
             <tbody>
                 
-                <tr class="mini-cart-product">
+                <tr v-for="item in basket" class="mini-cart-product">
                     <td style="width: 20%" class="mini-cart-product-thumb">
                         <div>
-                            <a href="/erkek-lacivert-kapusonlu-fermuarli-denim-sweatshirt-p112662">
-                                <img src="/productimages/112662/small/20ke09484r211.jpg" alt="img">
+                            <a :href="'/urun-detay/'+ item.product.id">
+                                <img :src="item.product.image" alt="img">
                             </a>
                         </div>
                     </td>
                     <td style="width: 45%">
                         <div class="mini-cart-description">
-                            <h4><a href="/erkek-lacivert-kapusonlu-fermuarli-denim-sweatshirt-p112662">Erkek Lacivert Kapüşonlu Fermuarlı Denim Sweatshirt 36</a></h4>
+                            <h4>
+                              <nuxt-link :to="'/urun-detay/' + item.product.id" class="name">
+                                {{ item.product.title }} 
+                              </nuxt-link>
+                            </h4>
                             
                             <span class="size">20KE09484R2136 </span>
                             
-                            <div class="price"><span>  </span></div>
+                            <div class="price"><span> {{ item.product.price.toFixed(2) }} TL  </span></div>
                             
                         </div>
                     </td>
-                    <td style="width: 10%" class="mini-cart-quantity">1</td>
-                    <td style="width: 15%" class="mini-cart-subtotal"><span>229,99 TL </span></td>
+                    <td style="width: 10%" class="mini-cart-quantity">{{ item.count }}</td>
+                    <td style="width: 15%" class="mini-cart-subtotal"><span>{{ (item.count) * (item.product.price.toFixed(2)) }} TL </span></td>
                 </tr>
                 
             </tbody>
@@ -33,14 +37,10 @@
     <!--/.mini-cart-table-->
     <div class="mini-cart-footer">
     
-        <div class="pull-left subtotal-discount">
-            <small>İndirim:</small>
-            <span>114,99 TL</span>
-        </div>
         
         <div class="pull-right subtotal">
             <small>Toplam:</small>
-            <span>114,99 TL</span>    
+            <span>{{ total }} TL</span>    
         </div>
         <a class="btn btn-sm btn-danger" href="/sepetim">
             <i class="fa fa-shopping-cart">&nbsp;</i>

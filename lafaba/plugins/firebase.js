@@ -1,4 +1,4 @@
-import   firebase from 'firebase/app'
+import  firebase from 'firebase/app'
 import 'firebase/auth'
 import 'firebase/firestore'
 import 'firebase/database'
@@ -8,7 +8,7 @@ import 'firebase/database'
   var firebaseConfig = {
     apiKey: "AIzaSyANExIUoBuuQ7AWAh_eqi1gukEzQBT6Y9k",
     authDomain: "lafaba-web-proje.firebaseapp.com",
-    databaseURL:"https:/lafaba-web-proje.firebaseio.com",
+    databaseURL:"https://lafaba-web-proje-default-rtdb.firebaseio.com",
     projectId: "lafaba-web-proje",
     storageBucket: "lafaba-web-proje.appspot.com",
     messagingSenderId: "146144295313",
@@ -20,14 +20,15 @@ import 'firebase/database'
     app = firebase.initializeApp(firebaseConfig)
     
     }
+  
   // Initialize Firebase
 //  firebase.initializeApp(firebaseConfig);
 //  firebase.analytics();
 
 
 
-/*
+
 export const auth = firebase.auth()
 export const DB = firebase.database()
-export const StoreDB = firebase.firestore()*/
+export const StoreDB = firebase.firestore()
 export default firebase
