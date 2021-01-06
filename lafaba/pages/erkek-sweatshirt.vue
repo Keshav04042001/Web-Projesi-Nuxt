@@ -465,7 +465,7 @@
                         
                             <span class="price-buying">
                                 <!-- span class="p-label">Sepette </span -->
-                                <span class="p-value">114,99</span>
+                                <span class="p-value">159,99</span>
                                 <span class="p-currency"> TL</span>
                             </span>
                             

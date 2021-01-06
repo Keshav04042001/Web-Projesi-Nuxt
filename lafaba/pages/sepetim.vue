@@ -81,7 +81,7 @@
                                                         </div>
                                                     </td>
                                                      <td class="price">
-                                                         {{ total }} TL
+                                                        {{ (item.count) * (item.product.price.toFixed(2)) }} TL
                                                     </td>
                                                     <td class="delete">
                                                         <a href="javascript:void(0)" @click="removeBasketItem(item.id)" id="ctl00_PortalContent_RptCart_ctl00_DeleteBtn" title="Sil"> <i class="fa fa-trash" aria-hidden="true" ></i></a>

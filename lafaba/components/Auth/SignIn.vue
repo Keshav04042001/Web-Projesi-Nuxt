@@ -86,7 +86,6 @@
                             </div>
                         </div>
                     </form>
-                    <div class="error" v-if="error">{{error.message}}</div>
                     <div class="modal fade" id="modal-contract" tabindex="-1" role="dialog">
                         <div class="modal-dialog">
                             <div class="modal-content">

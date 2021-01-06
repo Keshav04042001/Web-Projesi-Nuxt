@@ -45,7 +45,7 @@ export default {
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
-    '~/plugins/firebase.js',
+    //'~/plugins/firebase.js',
     { src: '~/plugins/vuex-persist', ssr: false }
   ],
 
@@ -58,11 +58,28 @@ export default {
 
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
+    [
+      '@nuxtjs/firebase',
+      {
+        config:{
+          apiKey: "AIzaSyANExIUoBuuQ7AWAh_eqi1gukEzQBT6Y9k",
+          authDomain: "lafaba-web-proje.firebaseapp.com",
+          databaseURL: "https://lafaba-web-proje-default-rtdb.firebaseio.com",
+          projectId: "lafaba-web-proje",
+          storageBucket: "lafaba-web-proje.appspot.com",
+          messagingSenderId: "146144295313",
+          appId: "1:146144295313:web:83041763404f001fc74230",
+          measurementId: "G-WZN8ZQS954"
+        },
+        services: {
+          firestore: true,
+          auth: true
+      }
+    },
+    '@nuxtjs/pwa'
+    ],
   ],
-}
-
-
-  
+}  
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
   }

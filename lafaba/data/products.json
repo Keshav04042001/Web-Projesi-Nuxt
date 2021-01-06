@@ -1,8 +1,7 @@
-
 [{
     "id": 1,
     "title": "Erkek Lacivert Kapüşonlu Fermuarlı Denim Sweatshirt",
-    "image": "https://www.lafaba.com/productimages/112662/big/20ke09484r211.jpg",
+    "image": "https://www.lafaba.com/productimages/112662/middle/20ke09484r211.jpg",
     "price": 159.99,
     "category": [
         "giyim/erkekgiyim",
@@ -15,7 +14,7 @@
 {
     "id": 2,
     "title": "Erkek Bordo Oversize Fitilli Kadife Sweatshirt",
-    "image": "https://www.lafaba.com/productimages/112277/big/20ke09477r25-1.jpg",
+    "image": "https://www.lafaba.com/productimages/112277/middle/20ke09477r25-1.jpg",
     "price": 103.99,
     "category": [
         "giyim/erkekgiyim",
@@ -25,7 +24,7 @@
 {
     "id": 3,
     "title": "Erkek Beyaz Kapüşonlu Peluş Sweatshirt",
-    "image": "https://www.lafaba.com/productimages/112330/big/20ke09490r01-1.jpg",
+    "image": "https://www.lafaba.com/productimages/112330/middle/20ke09490r01-1.jpg",
     "price": 159.99,
     "category": [
         "giyim/erkekgiyim",
@@ -35,7 +34,7 @@
 {
     "id": 4,
     "title": "Erkek Taba Kapüşonlu Fitilli Kadife Sweatshirt",
-    "image": "https://www.lafaba.com/productimages/112254/big/20ke09476r27-1.jpg",
+    "image": "https://www.lafaba.com/productimages/112254/middle/20ke09476r27-1.jpg",
     "price": 159.99,
     "category": [
         "giyim/erkekgiyim",

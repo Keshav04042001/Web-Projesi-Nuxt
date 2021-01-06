@@ -1,4 +1,4 @@
-const data = require("@/data/products.json");
+//const data = require("@/data/products.json");
 
 export const state = () => ({
     isInitialized: false,
@@ -14,11 +14,16 @@ export const mutations = {
     }
 };
 export const actions = {
-    initData({ state, commit }, ) {
-        if (state.isInitialized === false) {
-            commit("setProducts", data);
-            state.isInitialized = true;
-        }
+    initData({ state,commit }, ) {
+   
+        this.$fire.firestore.collection("products").get().then(snapshot => {
+          let tempItems = [];
+          snapshot.forEach(data => {
+            tempItems.push(data.data());
+          });
+          commit("setProducts", tempItems);
+  
+        });
     },
     setProduct({ state, commit }, id) {
         for (let i = 0; i < state.products.length; i++) {

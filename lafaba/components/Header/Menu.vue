@@ -20,22 +20,8 @@
                                 <button type="button" class="navbar-toggle  navbar-mini-cart" data-toggle="collapse" data-target=".navbar-cart">
                                     <i class="fa fa-shopping-cart"></i>
                                 </button>
-                                <ul class="user-menu">
-                                    <li class="visible-xs">
-                                        <a class="toggle-search collapse" data-toggle="collapse" data-target="#search-new-mobile" href="javascript:;" aria-expanded="true">
-                                            <i class="fa fa-search"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="/store/usershoppinglist.aspx"><i class="fa fa-heart"></i></a>
-                                    </li>
-                                    <li>
-                                        <Nuxt-link to="/login.aspx">
-                                            <i class="fa fa-user"></i>
-                                        </Nuxt-link>
-                                        
-                                    </li>                                    
-                                </ul>
+                                
+                          
                             </div>
                         </div>
                     </div>
@@ -60,19 +46,32 @@
                                         </div>
                                     </a>
                                 </div>
-                            </div> 
+                            </div>  
+                               
+                           
                             <ul class="user-menu">
                                 <li class="visible-xs">
                                     <a class="toggle-search collapse" data-toggle="collapse" data-target="#search-new-mobile" href="javascript:;" aria-expanded="true"><i class="fa fa-search"></i></a></li>
                                     <li class="dropdown dropdown-hover hasUserMenu">
+                                       
                                         <Nuxt-link to="/login.aspx">
                                             <i class="fa fa-user"></i>
-                                        </Nuxt-link>
+                                        </Nuxt-link> 
+                                           Logged in
+                                    <span v-if="loggedIn">Yes</span>
+                                    <span v-else>No</span> 
+                                    
+                                    <div>
+                                        <button  v-if="loggedIn" style="color=pink" @click="signOut">
+                                            Sign Out
+                                        </button>
+                                    </div>
                                         <HeaderBasket />
                                     </li>
                                     <li><a href="/store/usershoppinglist.aspx"><i class="fa fa-heart"></i></a>
                                 </li>
                             </ul>
+                           
                             <!--/.navbar-nav hidden-xs-->
                         </div>
                     </div>
@@ -93,7 +92,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> <Account v-if="loggedIn === true"/>
     </body>
 </template>
 
@@ -101,8 +100,16 @@
 import Account from "@/components/Header/Account"
 import Navbar from "@/components/Header/Navbar";
 import SearcBox from "@/components/Header/SearchBox"
+import firebase from 'firebase/app'
+import 'firebase/auth'
+
 export default {
     name:'Menu',
+    data(){
+        return {
+            loggedIn : false,
+        }
+    },
     components: [
         Account,
         Navbar,
@@ -111,7 +118,31 @@ export default {
     computed: {
     basket() {
       return this.$store.getters["basket/getBasketItems"];
-    }
+    },
+    
+    },
+    methods:{
+       async signOut(){
+            try{
+                const data = await firebase.auth().signOut();
+                console.log(data);
+                this.$router.push({ name : "login.aspx"})
+            }
+            catch(error){
+                console.log(error)
+            }
+        }
   },
+  created(){
+      firebase.auth().onAuthStateChanged(user=> {
+          this.loggedIn = !!user;
+          if(user){
+              this.loggedIn=true;
+          }
+          else{
+              this.loggedIn=false;
+          }
+      })
+  }
 }
 </script>

@@ -103,7 +103,9 @@
                                     </div>
                                 </div>
                                 <div class="col-lg-18 col-lg-offset-6">
-                                    <button id="ctl00_PortalContent_BtnRegister" class="btn btn-primary km-submit" href="javascript:__doPostBack('ctl00$PortalContent$BtnRegister','')" type="button" name="button" v-on:click="signup"><i class="fa fa-save"></i>&nbsp;Ücretsiz Üye Olun</button>
+                                    <button id="ctl00_PortalContent_BtnRegister" class="btn btn-primary km-submit" href="javascript:__doPostBack('ctl00$PortalContent$BtnRegister','')" type="button" name="button" v-on:click="signup">
+                                        <i class="fa fa-save"></i>&nbsp;Ücretsiz Üye Olun
+                                    </button>
                                 </div>
                             </div>
                         </div>
