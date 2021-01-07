@@ -489,9 +489,6 @@ export default {
       };
       this.$store.dispatch('basket/addBasket', payload);
     },
-    handleChange(value) {
-        console.log(value)
-      }
     }
 }
 </script>
