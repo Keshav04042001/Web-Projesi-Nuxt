@@ -110,11 +110,11 @@ export default {
             loggedIn : false,
         }
     },
-    components: [
+    components: {
         Account,
         Navbar,
         SearcBox
-    ],
+    },
     computed: {
     basket() {
       return this.$store.getters["basket/getBasketItems"];
