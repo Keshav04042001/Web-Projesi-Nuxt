@@ -7,9 +7,6 @@
                   placeholder="Aramak istediğinizi ürünü yazınız" 
                   class="search-input form-control"
                   type="text"
-                  v-model.trim="input"
-                  v-on:input="search()"
-                  ref="input"
                 >
                 <span class="input-group-btn">
                     <button class="btn-nobg search-btn" type="submit"><i class="fa fa-search"></i></button>

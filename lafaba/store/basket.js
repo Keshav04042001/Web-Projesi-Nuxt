@@ -1,3 +1,6 @@
+import firebase from 'firebase/app'
+import 'firebase/auth'
+
 export const state = () => ({
     items: [],
   });
@@ -13,7 +16,11 @@ export const state = () => ({
     },
     decrease(state, index){
       state.items[index].count--;
+    },
+    _updateBasket(state, data) {
+      state.items = data;
     }
+
   };
   export const actions = {
     addBasket({state, commit}, data) {
@@ -52,6 +59,24 @@ export const state = () => ({
           return false;
         }
       }
+    },
+    fetchBasketFromFirebase({commit, rootState}){
+      firebase.auth().onAuthStateChanged(user=> {
+        if(!user) return null;
+        this.$fire.firestore.collection('basket').doc(user.email).get().then(snapshot => {
+          let list = [];
+          snapshot.forEach(data => {
+            list.push(data.data());
+          });
+          commit('_updateBasket', list);
+        });
+      });
+    },
+    syncWithFirebase({commit, state}) {
+      firebase.auth().onAuthStateChanged(user=> {
+        if(!user) return null;
+        this.$fire.firestore.collection('basket').doc(user.email).set({...state.items});
+      });
     }
   };
   export const getters = {
